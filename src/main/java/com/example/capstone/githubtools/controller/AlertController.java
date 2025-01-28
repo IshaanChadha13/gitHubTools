@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
-@CrossOrigin(origins = "*")
+@RequestMapping("/api/alerts")
+@CrossOrigin(origins = "http://localhost:5173")
 public class AlertController {
 
     private final AlertRepository alertRepository;
@@ -18,7 +18,7 @@ public class AlertController {
         this.alertRepository = alertRepository;
     }
 
-    @GetMapping("/alerts")
+    @GetMapping
     public List<AlertDocument> getAllAlerts() {
         Iterable<AlertDocument> iterable = alertRepository.findAll();
         List<AlertDocument> list = new ArrayList<>();
@@ -27,6 +27,7 @@ public class AlertController {
     }
 
     @GetMapping("/{owner}/{repo}")
+    @CrossOrigin(origins = "http://localhost:5173")
     public List<AlertDocument> getAlertsByOwnerAndRepo(
             @PathVariable String owner,
             @PathVariable String repo) {

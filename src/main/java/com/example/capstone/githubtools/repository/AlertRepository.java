@@ -8,5 +8,5 @@ import java.util.List;
 public interface AlertRepository extends ElasticsearchRepository<AlertDocument, String> {
     List<AlertDocument> findByRepoOwnerAndRepoName(String owner, String repo);
 
-    List<AlertDocument> findByRepoOwnerAndRepoNameAndAlertType(String owner, String repo, String codeScanning);
+    List<AlertDocument> findByRepoOwnerAndRepoNameAndAlertType(String owner, String repo, String alertType);
 }
