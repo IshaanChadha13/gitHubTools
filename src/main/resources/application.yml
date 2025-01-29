@@ -15,9 +15,9 @@ spring:
         dialect: org.hibernate.dialect.MySQL8Dialect
   kafka:
     bootstrap-servers: "localhost:9092"
-#    producer:
-#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
     consumer:
       group-id: "tool-scheduler-group"
       auto-offset-reset: "earliest"
@@ -25,18 +25,15 @@ spring:
       properties:
         bootstrap.servers: "localhost:9092"
 
-  elasticsearch:
-    # For Spring Boot 3.x, you may use 'spring.elasticsearch.uris' instead of 'spring.data.elasticsearch.uri'
-    uris: "http://localhost:9200"
-    # If you're using Spring Data Elasticsearch, you can configure index creation separately in the code or with mappings
-
-
-
 kafka:
   topics:
     repo-schedule-topic: "repo-schedule-topic"
     partition-count: 1
     replication-factor: 1
+    parser-topic: "parser-topic"
+
+myapp:
+  local-storage: "C:/tool-scan-data/tmp/alerts"
 
 logging:
   level:
