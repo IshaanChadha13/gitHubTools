@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example.capstone</groupId>
-	<artifactId>githubtools</artifactId>
+	<artifactId>toolScheduler</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>githubtools</name>
 	<description>Demo project for Spring Boot</description>
